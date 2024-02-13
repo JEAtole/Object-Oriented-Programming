@@ -13,16 +13,11 @@ public class StudentDA {
 
         while(studentInfo.hasNext()) {
 
-            String rowStudent = studentInfo.nextLine();
-            String[] rowStudentSpecific = rowStudent.split(",");
+            String[] rowStudentInfo = studentInfo.nextLine().split(",");
 
-            if(blockCode.equals(rowStudentSpecific[0])) {
+            if(blockCode.equals(rowStudentInfo[0])) {
 
-                Student student = new Student();
-
-                student.setStudentNumber(rowStudentSpecific[1].trim());
-                student.setName(rowStudentSpecific[2].trim());
-                student.setProgram(rowStudentSpecific[3].trim());
+                Student student = new Student(rowStudentInfo[1].trim(), rowStudentInfo[2].trim(), rowStudentInfo[3].trim());
 
                 CourseDA courseDA = new CourseDA(student.getStudentNumber());
                 student.setCourseList(courseDA.getCourseList());

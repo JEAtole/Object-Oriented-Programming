@@ -12,14 +12,8 @@ public class BlockSectionDA {
 
         while(blockSectionInfo.hasNext()) {
 
-            String rowBlockSection = blockSectionInfo.nextLine();
-            String[] rowBlockSectionSpecific = rowBlockSection.split(",");
-
-            BlockSection blockSection = new BlockSection();
-
-            blockSection.setBlockCode(rowBlockSectionSpecific[0].trim());
-            blockSection.setDescription(rowBlockSectionSpecific[1].trim());
-            blockSection.setAdviser(rowBlockSectionSpecific[2].trim());
+            String[] rowBlockSection = blockSectionInfo.nextLine().split(",");
+            BlockSection blockSection = new BlockSection(rowBlockSection[0].trim(), rowBlockSection[1].trim(), rowBlockSection[2].trim());
 
             StudentDA studentDA = new StudentDA(blockSection.getBlockCode());
             blockSection.setStudentList(studentDA.getStudentList());

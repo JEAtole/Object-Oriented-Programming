@@ -1,12 +1,18 @@
 package domain;
 import java.util.ArrayList;
 public class BlockSection {
-    private String blockCode;
-    private String description;
-    private String adviser;
+    private final String blockCode;
+    private final String description;
+    private final String adviser;
     private int totalStudents;
 
     private ArrayList<Student> studentList;
+
+    public BlockSection(String blockCode, String description, String adviser) {
+        this.blockCode = blockCode;
+        this.description = description;
+        this.adviser = adviser;
+    }
 
     public String toString() {
         StringBuilder result = new StringBuilder();
@@ -27,18 +33,6 @@ public class BlockSection {
 
     public String getBlockCode() {
         return blockCode;
-    }
-
-    public void setBlockCode(String blockCode) {
-        this.blockCode = blockCode;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setAdviser(String adviser) {
-        this.adviser = adviser;
     }
 
     public void setStudentList(ArrayList<Student> studentList) {

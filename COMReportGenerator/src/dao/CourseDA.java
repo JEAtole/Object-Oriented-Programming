@@ -13,18 +13,15 @@ public class CourseDA {
 
         while(courseInfo.hasNext()) {
 
-            String rowCourse = courseInfo.nextLine();
-            String[] rowCourseSpecific = rowCourse.split(",");
+            String[] rowCourseInfo = courseInfo.nextLine().split(",");
 
-            if(studentNumber.equals(rowCourseSpecific[0])) {
-                Course course = new Course();
+            if(studentNumber.equals(rowCourseInfo[0])) {
 
-                course.setCourseCode(rowCourseSpecific[1].trim());
-                course.setDescription(rowCourseSpecific[2].trim());
-                course.setUnit(Integer.parseInt(rowCourseSpecific[3].trim()));
-                course.setDay(rowCourseSpecific[4].trim());
-                course.setTime(rowCourseSpecific[5].trim());
-
+                Course course = new Course(rowCourseInfo[1].trim(),
+                        rowCourseInfo[2].trim(),
+                        Integer.parseInt(rowCourseInfo[3].trim()),
+                        rowCourseInfo[4].trim(),
+                        rowCourseInfo[5].trim());
                 courseList.add(course);
 
             }

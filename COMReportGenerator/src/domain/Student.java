@@ -7,6 +7,12 @@ public class Student {
     private int totalUnitsEnrolled;
     private ArrayList<Course> courseList;
 
+    public Student(String studentNumber, String name, String program){
+        this.studentNumber = studentNumber;
+        this.name = name;
+        this.program = program;
+    }
+
     public String toString() {
         String studentOutput = "Student number: " + studentNumber + "\n" +
                 "Student name: " + name + "\n" +
@@ -31,18 +37,6 @@ public class Student {
 
     public String getStudentNumber() {
         return studentNumber;
-    }
-
-    public void setStudentNumber(String studentNumber) {
-        this.studentNumber = studentNumber;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setProgram(String program) {
-        this.program = program;
     }
 
     public void setCourseList(ArrayList<Course> courseList) {
